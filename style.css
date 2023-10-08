@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+*{
+    font-family: 'Young Serif', serif;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+img{
+    border: 10px solid black;
+    display: block;
+    margin: auto;
+}
+.container{
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+.container span{
+    margin: 0 35px;
+}
+.container span::after{
+    content: '_';
+    font-size: 70px;
+    position: absolute;
+    transform: translateX(-32px) translateY(-30px);
+}
+.textbox{
+    text-align: center;
+    display: block;
+    margin: auto;
+    height: 50px;
+    width: 500px;
+    font-size: 2rem;
+}
