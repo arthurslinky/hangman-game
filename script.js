@@ -1,56 +1,61 @@
 i = 0;
+x = 0;
 const wordsArray = [
     "skate",
     "draft",
     "equal",
-    "refer",
     "feast",
     "grain",
-    "apple",
     "blind",
     "snarl",
     "prize",
     "truck",
-    "shell",
     "arise",
-    "smell",
     "medal",
-    "glass",
-    "truth",
     "ivory",
     "board",
-    "level",
     "drink",
     "glove",
-    "jelly",
     "tribe",
-    "sheep",
     "frank",
     "flock",
     "stage",
     "other",
     "split",
-    "paper",
     "drive",
     "groan",
     "valid",
     "wrong",
-    "theme",
     "cruel",
     "power",
     "flesh",
     "plain",
-    "pupil",
     "solve",
     "bitch",
-    "tract",
     "abuse",
     "tiger",
-    "proof",
-    "creed",
-    "hover"
+    "hover",
+    "block",
+    "chair",
+    "dance",
+    "faith",
+    "grape",
+    "jumbo",
+    "knots",
+    "lemon",
+    "motel",
+    "night",
+    "olive",
+    "piano",
+    "quick",
+    "shoes",
+    "table",
+    "virus",
+    "waltz",
+    "yacht",
+    "zebra"
 ];
-const randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)];
+const randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)].split("");
 
 function imageChange() {
     if (i > 9) { return 0 }
@@ -58,17 +63,12 @@ function imageChange() {
     i += 1;
 }
 
-function hangman() {
-    const word = randomWord.split("");
-    const answer = ["", "", "", "", ""];
-    userinput = prompt("Enter a letter", "a");
-    if (word.includes(userinput)) {
-        var index = word.indexOf(userinput);
-        answer.splice(index, 1, userinput);
-        document.getElementById(index.toString()).textContent = 'a';
-    }
-    else {
+function test() {
+    var userinput = document.getElementById("textbox").value.toLowerCase().trim();
+    if (randomWord.includes(userinput)) {
+        index = randomWord.indexOf(userinput);
+        document.getElementById(index.toString()).innerHTML = userinput.toUpperCase();
+    } else {
         imageChange();
     }
 }
-
