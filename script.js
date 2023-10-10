@@ -1,5 +1,4 @@
 i = 0;
-x = 0;
 const wordsArray = [
     "skate",
     "draft",
@@ -58,10 +57,18 @@ const wordsArray = [
 const randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)].split("");
 
 function imageChange() {
-    if (i > 9) { return 0 }
+    if (i > 9) {
+        const overlay = document.getElementById("filter").style;
+        const retrybox = document.getElementById("retrybox").style;
+        
+        retrybox.display = 'block';
+        overlay.display = 'block';
+        return 0; 
+    }
     document.querySelector("img").src = `images/${i + 1}.jpg`;
     i += 1;
 }
+
 
 function test() {
     var userinput = document.getElementById("textbox").value.toLowerCase().trim();
