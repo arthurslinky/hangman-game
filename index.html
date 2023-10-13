@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
@@ -7,10 +8,12 @@
     <title>hangman game</title>
     <script src="script.js"></script>
 </head>
+
 <body>
     <div id="filter" style="display: none;"></div>
     <h1>Hangman</h1>
-    <img src="images/0.jpg" height="400px">
+    <img id="mainimage" src="images/0.jpg" height="400px">
+
     <div class="container">
         <span id="0">&nbsp;</span>
         <span id="1">&nbsp;</span>
@@ -18,15 +21,31 @@
         <span id="3">&nbsp;</span>
         <span id="4">&nbsp;</span>
     </div>
+
     <div id="incorrect-letters">
         <span id="guess">Guessed Letters:</span>
-        <div class="incorrect-letters-container"></div>
+        <div class="incorrect-letters-container">&nbsp;</div>
     </div>
-    <input class="textbox" id="textbox" type="text">
+
+    <input id="textbox" type="text" maxlength="1" onkeypress="return AvoidSpace(event)">
     <input class="button" type="button" value="Check" onclick="test()">
+
     <a href="index.html">
-        <div id="retrybox">You lost...<br>Retry?</div>
+        <div style="display:flex; justify-content: center;">
+            <div id="retrybox" class="winretrybox">You lost...<br>Retry?</div>
+        </div>
     </a>
-    <img id="dancingmonkey" src="https://media.tenor.com/-LlG5WSoK74AAAAi/monkey.gif" style="display: none;">
+
+    <div style="display:flex; justify-content: center;">
+        <img id="dancingmonkey" src="https://media.tenor.com/-LlG5WSoK74AAAAi/monkey.gif">
+    </div>
+
+    <a href="index.html">
+        <div style="display:flex; justify-content: center;">
+            <div id="winbox" class="winretrybox">You won!<br>Play again?</div>
+        </div>
+    </a>
+
 </body>
-</html> 
+
+</html>
