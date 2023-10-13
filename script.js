@@ -1,5 +1,6 @@
 i = 0;
 j = 0;
+var correctletters = [];
 const wordsArray = [
 
     "skate",
@@ -110,18 +111,15 @@ const wordsArray = [
 
 ];
 const randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)].split("");
-function overlay(){
-    const overlay = document.getElementById("filter").style;
-    const retrybox = document.getElementById("retrybox").style;
-    
-    retrybox.display = 'block';
-    overlay.display = 'block';
-}
- 
+
 function imageChange() {
     if (i > 9) { 
-        overlay();
-        return 0;
+        const overlay = document.getElementById("filter").style;
+        const retrybox = document.getElementById("retrybox").style;
+        
+        retrybox.display = 'block';
+        overlay.display = 'block';
+        return 0; 
      }
     document.querySelector("img").src = `images/${i + 1}.jpg`;
     i += 1;
@@ -133,16 +131,25 @@ function displayIncorrectLetters() {
     incorrectLettersContainer.innerHTML = incorrectLetters.join(' ').toUpperCase();
 }
 
+function winnerScreen(){
+    const overlay = document.getElementById("filter").style;
+    const dancingmonkey = document.getElementById("dancingmonkey").style;
+
+    dancingmonkey.display = 'block';
+    overlay.display = 'block';
+}
+
 function test() {
     var userinput = document.getElementById("textbox").value.toLowerCase().trim();
     if (randomWord.includes(userinput)) {
         j += 1;
-        if(j == 5){
-            overlay();
+        if(j > 5){
             winnerScreen();
         }
+        
         index = randomWord.indexOf(userinput);
         document.getElementById(index.toString()).innerHTML = userinput.toUpperCase();
+        correctletters.push(userinput);
     } else {
         if(!incorrectLetters.includes(userinput)){
             incorrectLetters.push(userinput);   
