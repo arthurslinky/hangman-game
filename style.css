@@ -77,3 +77,7 @@ img{
     color: black;
     z-index: 2;
 }
+
+#incorrect-letters{
+    font-size: 2rem;
+}
