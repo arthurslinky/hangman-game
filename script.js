@@ -64,7 +64,12 @@ function incorrect() {
     if (i > 9) {
         const overlay = document.getElementById("filter").style;
         const retrybox = document.getElementById("retrybox").style;
+        const saddog = document.getElementById("saddog").style;
+        const theword = document.getElementById("the-word-container").style;
+        document.getElementById("the-word").innerHTML = randomWord.join("");
 
+        theword.display = 'block';
+        saddog.display = 'block';
         retrybox.display = 'block';
         overlay.display = 'block';
         return 0;
@@ -111,3 +116,9 @@ function AvoidSpace(event) {
     var k = event ? event.which : window.event.keyCode;
     if (k == 32) return false;
 }
+
+window.addEventListener('keyup', function (e) {
+    if (e.keyCode === 13) {
+       test();
+    }
+  }, false);

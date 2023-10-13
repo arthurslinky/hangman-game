@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hangman game</title>
     <script src="script.js"></script>
+    <link rel="shortcut icon" type="image/png" href="https://i.pinimg.com/originals/0f/b6/42/0fb642d8f249c82728e595f7a1b9a5b6.png">
 </head>
 
 <body>
@@ -28,11 +29,11 @@
     </div>
 
     <input id="textbox" type="text" maxlength="1" onkeypress="return AvoidSpace(event)">
-    <input class="button" type="button" value="Check" onclick="test()">
+    <input class="button" type="submit" value="Check" onclick="test()">
 
     <a href="index.html">
         <div style="display:flex; justify-content: center;">
-            <div id="retrybox" class="winretrybox">You lost...<br>Retry?</div>
+            <div id="retrybox" class="everything">You lost...<br>Retry?</div>
         </div>
     </a>
 
@@ -40,12 +41,15 @@
         <img id="dancingmonkey" src="https://media.tenor.com/-LlG5WSoK74AAAAi/monkey.gif">
     </div>
 
+    <div style="display:flex; justify-content: center;">
+        <img id="saddog" src="https://24.media.tumblr.com/tumblr_lfz1aopqiW1qa9irko1_500.gif" style="transform: scale(0.8);">
+    </div>
+
     <a href="index.html">
         <div style="display:flex; justify-content: center;">
-            <div id="winbox" class="winretrybox">You won!<br>Play again?</div>
+            <div id="winbox" class="everything">You won!<br>Play again?</div>
+            <div class="everything" id="the-word-container" style="top:10%; z-index: 1203902193; width:500px">The word was <span id="the-word"></span>...</div>
         </div>
     </a>
-
 </body>
-
 </html>

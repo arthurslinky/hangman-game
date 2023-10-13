@@ -4,6 +4,9 @@
     margin: 0;
     padding: 0;
 }
+body{
+    overflow: hidden;
+}
 h1{
     font-size: 3rem;
     text-align: center;
@@ -59,10 +62,10 @@ h1{
     left: 0;
     top: 0;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
-.winretrybox{
+.everything{
     display: none;
     font-size: 2.5rem;
     text-align: center;
@@ -74,11 +77,12 @@ h1{
     cursor: pointer;
     color: black;
     z-index: 2;
+    top: 55%;
 }
 #incorrect-letters{
     font-size: 2rem;
 }
-#dancingmonkey{
+#dancingmonkey, #saddog{
     z-index: 3;
     position: absolute;
     top: 25%;
@@ -87,10 +91,4 @@ h1{
     display: none;
     border-radius: 25px;
     border: 5px black solid;
-}
-#retrybox{
-    top: 45%;
-}
-#winbox{
-    top: 55%;
 }
