@@ -33,8 +33,6 @@ const wordsArray = [
     "flesh",
     "plain",
     "solve",
-    "bitch",
-    "abuse",
     "tiger",
     "hover",
     "block",
@@ -60,6 +58,7 @@ const randomWord = wordsArray[Math.floor(Math.random() * wordsArray.length)].spl
 
 function incorrect() {
     const incorrectLettersContainer = document.querySelector('.incorrect-letters-container');
+    document.getElementById("textbox").value = '';
     incorrectLettersContainer.innerHTML = incorrectLetters.join(', ').toUpperCase();
     if (i > 9) {
         const overlay = document.getElementById("filter").style;
@@ -103,8 +102,10 @@ function test() {
         } 
         index = randomWord.indexOf(userinput);
         document.getElementById(index.toString()).innerHTML = userinput.toUpperCase();
+        document.getElementById("textbox").value = '';
     } else {
         if (incorrectLetters.includes(userinput)) {
+            document.getElementById("textbox").value = '';
             return 0;
         }
         incorrectLetters.push(userinput);
